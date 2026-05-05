@@ -158,6 +158,11 @@ body {
     border-color:#42ab98;
 }
 
+input[type="date"] {
+    direction: rtl;
+    text-align: right;
+}
+
 /* RESPONSIVE UNIQUE */
 @media (max-width: 768px) {
 
