@@ -154,7 +154,8 @@ body {
 }
 
 .btn-success:hover {
-    background-color: #08915e;
+    background-color: #42ab98;
+    border-color:#42ab98;
 }
 
 /* RESPONSIVE UNIQUE */
