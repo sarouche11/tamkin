@@ -1,0 +1,201 @@
+body {
+    margin: 0;
+    font-family: "Cairo", sans-serif !important;
+    background: #eaf5f3;
+    overflow-x: hidden;
+}
+
+/* CONTAINER */
+.my-container {
+    padding-top: 85px;
+    padding-bottom: 80px;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 20px;
+}
+
+/* BULLES */
+.my-container::before,
+.my-container::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 0.9;
+}
+
+/* Bulle haut gauche */
+.my-container::before {
+    width: 280px;
+    height: 280px;
+    background: #cdeae5;
+    top: -120px;
+    left: -120px;
+}
+
+/* Bulle bas droite */
+.my-container::after {
+    width: 280px;
+    height: 280px;
+    background: #3fa3ad;
+    bottom: -120px;
+    right: -120px;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    z-index: 5;
+}
+
+.logo img {
+    width: 65px;
+}
+
+.title{
+    color: #45b08e;
+    font-weight: 800;
+    
+}
+
+.titles {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.titles h2 {
+    margin: 0;
+    color: #45b08e;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+/* FORM CARD */
+.form-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+
+    width: 92%;
+    /* 👈 plus large */
+    max-width: 1100px;
+    /* 👈 au lieu de 750px */
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 5;
+}
+
+.form-card h2 {
+    margin-bottom: 20px;
+    color: #2a9d8f;
+}
+
+.form-card input,
+.form-card select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: "Cairo", sans-serif !important;
+}
+
+.form-card button {
+    width: 100%;
+    padding: 12px;
+    background: #45b08e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+.k-letter {
+  background: linear-gradient(
+    90deg,
+    #45b08e,
+    #40a8a1,
+    #42ab98,
+    #3e9dba,
+    #3fa3ad
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  display: inline;
+  unicode-bidi: isolate;
+}
+
+
+.captcha-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.captcha-box img {
+    margin-bottom: 10px;
+}
+
+.btn-success {
+    background-color: #45b08e;
+    border-color: #45b08e;
+}
+
+.btn-success:hover {
+    background-color: #08915e;
+}
+
+/* RESPONSIVE UNIQUE */
+@media (max-width: 768px) {
+
+    .my-container {
+        padding-top: 85px;
+        gap: 15px;
+    }
+
+    .logo {
+        flex-direction: column;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .titles {
+        align-items: center;
+    }
+
+    .logo img {
+        width: 50px;
+    }
+
+    .form-card {
+        padding: 20px;
+        margin: 0 10px;
+    }
+
+    .my-container::before,
+    .my-container::after {
+        width: 200px;
+        height: 200px;
+    }
+
+    .my-container::after {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+
+
+

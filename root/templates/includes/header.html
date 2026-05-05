@@ -1,0 +1,28 @@
+{% load static %}
+<header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="{% static 'assets/img/logo.webp" alt=""> -->
+
+        <img src="{% static 'assets/img/logo.png' %}" alt="" style="width: 120px;">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">الرئيسية</a></li>
+          <li><a href="#about">حول البرنامج</a></li>
+
+          <li><a href="#recent-news">المميزات</a></li>
+           <li><a href="#tamkin-life">برنامج تمكين</a></li>
+           <li><a href="#faq">الأسئلة الشائعة</a></li>
+
+          <li><a href="#contact">تواصل معنا</a></li>
+          <li class="ms-3"><a href="{% url 'register' %}" class="btn-login"> سجل الان</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
