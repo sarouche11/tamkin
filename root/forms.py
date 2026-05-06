@@ -44,6 +44,7 @@ class RegisteredForm(forms.ModelForm):
             'wilaya',
             'commune',
             'status',
+            'attestation_file',
         ]
 
         widgets = {
@@ -53,6 +54,9 @@ class RegisteredForm(forms.ModelForm):
             'birthday': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
             'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'رقم الهاتف  '}),
             'genre': forms.Select (attrs={'class': 'form-select arbl label-input','placeholder': 'الجنس'} ),
+           'attestation_file': forms.FileInput (attrs={'class': 'form-control label-input arbl','name': 'certificate_file','id': 'certificate_file',  'type' : 'file',}),
+          
+
         }
 
     def __init__(self, *args, **kwargs):

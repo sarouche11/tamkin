@@ -10,6 +10,7 @@ from django.shortcuts import get_object_or_404
 # Create your views here.
 
 def index(request):
+    
     return render (request,'index.html')
 
 
@@ -30,8 +31,7 @@ def register(request):
 
             return redirect("success", code=register.code)  
 
-            return redirect("register")  # ou autre page
-
+           
     else:
         register_form = RegisteredForm()
         captcha_form = CaptchaForm()
@@ -50,7 +50,7 @@ def register_id(request,code):
      
     compagnon = Compagnion.objects.filter(code=code).first()
 
-    # 🔥 si code n'existe pas → redirection
+   
     if not compagnon:
         return redirect(reverse('forbidden', kwargs={'code': 401}))
 
@@ -136,6 +136,8 @@ def success(request, code):
 
     register = get_object_or_404(Registered, code=code)
 
-    return render(request, 'success.html', {
+    context = {
         'register': register
-    })
+    }
+
+    return render(request, 'success.html',context )

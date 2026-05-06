@@ -8,12 +8,12 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title> {% block title %} Tamkin | Register {% endblock %}</title>
+    <title> {% block title %} Temkeen | Register {% endblock %}</title>
     <link href="{% static 'assets/img/logo2.png' %}" rel="icon">
 
 
 
-    <link href="{% static 'assets/css/form.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/register.css' %}" rel="stylesheet">
 
 
 
@@ -30,7 +30,7 @@
             <img src="{% static 'assets/img/logo2.png' %} " alt="">
             <div class="titles">
                 <h2 class="k-letter " data-text="تمكين">تمكين</h2>
-                <h2 class="k-letter " data-text="تمكين">Tamkin</h2>
+                <h2 class="k-letter " data-text="تمكين">Temkeen</h2>
                 <!-- <h2>Tam<span class="k-letter">k</span>in</h2> -->
 
             </div>
@@ -49,14 +49,14 @@
                 <div class="row g-2">
 
                     <div class="col-12 col-md-6">
-                        <label>رقم التعريف الوطني</label>
+                        <label> رقم التعريف الوطني <span style="color: red;">*</span> </label>
                         {{ register_form.nin }}
 
 
                     </div>
 
                     <div class="col-12 col-md-6">
-                        <label>تاريخ الميلاد</label>
+                        <label>  تاريخ الميلاد <span style="color: red;">*</span></label>
                         {{ register_form.birthday }}
                         {% for error in register_form.birthday.errors %}
                         <div class="text-danger">{{ error }}</div>
@@ -68,7 +68,7 @@
                 <div class="row g-2">
 
                     <div class="col-12 col-md-6">
-                        <label>الاسم</label>
+                        <label> الاسم <span style="color: red;">*</span></label>
                         {{ register_form.first_name }}
                         {% for error in register_form.first_name.errors %}
                         <div class="text-danger">{{ error }}</div>
@@ -76,7 +76,7 @@
                     </div>
 
                     <div class="col-12 col-md-6">
-                        <label>اللقب</label>
+                        <label>  اللقب <span style="color: red;">*</span></label>
                         {{ register_form.last_name }}
                         {% for error in register_form.last_name.errors %}
                         <div class="text-danger">{{ error }}</div>
@@ -88,7 +88,7 @@
                 <div class="row g-2">
 
                     <div class="col-12 col-md-6">
-                        <label>الجنس</label>
+                        <label>   الجنس <span style="color: red;">*</span></label>
                         {{ register_form.genre }}
                         {% for error in register_form.genre.errors %}
                         <div class="text-danger">{{ error }}</div>
@@ -96,7 +96,7 @@
                     </div>
 
                     <div class="col-12 col-md-6">
-                        <label>رقم الهاتف</label>
+                        <label> رقم الهاتف <span style="color: red;">*</span></label>
                         {{ register_form.phone }}
                         {% for error in register_form.phone.errors %}
                         <div class="text-danger">{{ error }}</div>
@@ -108,14 +108,24 @@
                 <div class="row g-2">
 
                     <div class="col-12 col-md-6">
-                        <label>الولاية</label>
+                        <label> الولاية <span style="color: red;">*</span></label>
                         {{ register_form.wilaya }}
                     </div>
 
                     <div class="col-12 col-md-6">
-                        <label>البلدية</label>
+                        <label> البلدية <span style="color: red;">*</span></label>
                         {{ register_form.commune }}
                     </div>
+
+                </div>
+                <div class="row g-2">
+
+                    <div class="col-12 col-md-12">
+                        <label> تحميل الشهادة ان وجدت </label>
+                        {{ register_form.attestation_file }}
+                    </div>
+
+                 
 
                 </div>
 

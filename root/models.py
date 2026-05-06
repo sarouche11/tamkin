@@ -105,8 +105,9 @@ class Registered (models.Model):
         default=data_register.registration.CHECK_NIN
     )
 
-    miclat = models.BooleanField(default=False)
+    attestation_file = models.FileField(upload_to='attestations/', blank=True, null=True)
 
+    miclat = models.BooleanField(default=False)
     compagnion = models.ForeignKey(
     Compagnion,
     on_delete=models.SET_NULL,
