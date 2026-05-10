@@ -8331,8 +8331,8 @@ section,
 
 /* active state */
 .faq .accordion-button:not(.collapsed) {
-  background: #e0e7ff;
-  color: #1e40af;
+  background: #a3d1c2;
+  color: #3c9e7f;
 }
 
 /* arrow fix */
