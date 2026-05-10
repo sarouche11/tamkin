@@ -1,5 +1,5 @@
 from django import forms
-from .models import Registered, Wilaya, Commune
+from .models import Registered, Wilaya, Commune, Contact
 from captcha.fields import CaptchaField
 
 
@@ -99,4 +99,27 @@ class RegisteredForm(forms.ModelForm):
         if nin and len(nin) != 18:
             raise forms.ValidationError("رقم التعريف الوطني يجب أن يكون 18 رقمًا")
 
-        return nin       
+        return nin    
+
+
+class ContactForm(forms.ModelForm):
+
+    class Meta:
+        model = Contact
+        fields =(       
+        "name",
+        "email",
+        "subject",
+        "message",
+        )
+
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control','placeholder': 'الاسم و اللقب ','name': 'email', 'id': 'email',  'style' : 'text-align: right;','required': 'required'}),
+      
+            'email': forms.EmailInput (attrs={ 'class': 'form-control','placeholder': ' البريد الالكتروني  ','name': 'email','id': 'email', 'style' : 'text-align: right;','required': 'required' }),
+            'subject': forms.TextInput(attrs={ 'class': 'form-control text-end arbl', 'placeholder': 'الموضوع', 'name': 'subject','id': 'subject','style' : 'text-align: right;', 'required': 'required' } ),
+      
+            'message': forms.Textarea (attrs={ 'class': 'form-control text-end arbl', 'placeholder': 'نص الرسالة',  'name': 'message',  'id': 'message',  'style' : 'color: dimgrey; text-align: right;',  'dir': 'rtl', 'required': 'required'}),
+        
+
+        }       

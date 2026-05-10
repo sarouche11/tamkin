@@ -108,3 +108,31 @@ class CompagnionImportExport(ImportExportModelAdmin):
     search_fields = ['code', 'nin', 'first_name','last_name']  # Allows search by these fields
     list_filter = ['active']  # Allows filtering by active status
     ordering = ['code'] 
+
+
+
+@admin.register(Contact)
+class ContactImportExport(ImportExportModelAdmin):
+
+    fields = [
+        'name',
+        'email', 
+        'subject',
+        'message',
+        'active',
+       
+    
+        
+       
+       
+       
+    ]
+    list_display = [
+        'name',
+        'email', 
+        'subject',
+        'message',
+        'active',
+        'created_at',
+        'update_in',
+    ]    

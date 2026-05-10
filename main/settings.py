@@ -161,3 +161,15 @@ CAPTCHA_FONT_SIZE = 40
 CAPTCHA_BACKGROUND_COLOR = '#e0e0e0'
 CAPTCHA_FOREGROUND_COLOR = "#1C9E97"
 
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'mail.mkesm.gov.dz'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = 'no-reply@mkesm.gov.dz'
+EMAIL_HOST_PASSWORD = 'ze{9Yd5JSf'
+
+

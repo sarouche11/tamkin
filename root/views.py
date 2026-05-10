@@ -1,17 +1,64 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.http import JsonResponse
-from .models import Commune,Compagnion,Registered
-from .forms import CaptchaForm, RegisteredForm
+from .models import Commune,Compagnion,Registered, Contact
+from .forms import CaptchaForm, RegisteredForm, ContactForm
 from . import data as data_register
 from django.contrib import messages
 from django.shortcuts import get_object_or_404
+from django.core.mail import send_mail
 
 # Create your views here.
 
 def index(request):
-    
-    return render (request,'index.html')
+
+    contactForm = ContactForm(request.POST or None)
+    success_message = request.session.pop('success_message', '')
+    error_message = ''
+
+    if request.method == 'POST':
+
+        if contactForm.is_valid():
+
+            # Save contact
+            contact = Contact(
+                name=contactForm.cleaned_data['name'],
+                email=contactForm.cleaned_data['email'],
+                subject=contactForm.cleaned_data['subject'],
+                message=contactForm.cleaned_data['message'],
+            )
+
+            contact.save()
+
+            # Send email
+            try:
+                send_mail(
+                    subject=contact.subject,
+                    message=contact.message,
+                    from_email=contact.email,
+                    recipient_list=['no-reply@mkesm.gov.dz'],
+                )
+
+            except Exception as e:
+                print("EMAIL ERROR:", e)
+                error_message = str(e)
+
+            request.session['success_message'] = 'تم ارسال رسالتك. شكرًا لك!'
+            return redirect(reverse('index') + '#contact-form')
+
+        else:
+            error_message = 'الرجاء التحقق من صحة البيانات المدخلة.'
+
+    context = {
+        'contactForm': contactForm,
+        'success_message': success_message,
+        'error_message': error_message,
+    }
+
+    return render(request, 'index.html', context)
+
+
+
 
 
 

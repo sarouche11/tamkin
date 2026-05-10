@@ -126,5 +126,18 @@ class Registered (models.Model):
        return f"{self.first_name} {self.last_name} ({self.code})"
     
 
+    
+class Contact(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.EmailField(max_length=200, blank=False, null=False)
+    subject = models.CharField(max_length=200, blank=False, null=False)
+    message = models.TextField()
+    active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    update_in = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+            return f'{self.name} - {self.subject}'
+
 
     
