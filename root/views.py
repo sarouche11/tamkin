@@ -20,7 +20,7 @@ def index(request):
 
         if contactForm.is_valid():
 
-            # Save contact
+           
             contact = Contact(
                 name=contactForm.cleaned_data['name'],
                 email=contactForm.cleaned_data['email'],
@@ -30,7 +30,7 @@ def index(request):
 
             contact.save()
 
-            # Send email
+            
             try:
                 send_mail(
                     subject=contact.subject,
