@@ -1,4 +1,3 @@
-
 {% load static %}
 
 <!DOCTYPE html>
@@ -7,18 +6,18 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  
+
   <title>
-     {% block title %}
-     Temkeen
-     {% endblock %}
-    </title>
+    {% block title %}
+    Temkeen
+    {% endblock %}
+  </title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
   <!-- Favicons -->
   <link href="{% static 'assets/img/logo2.png' %}" rel="icon">
- 
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -52,18 +51,35 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PHSRNNDG');</script>
+  <!-- End Google Tag Manager -->
 </head>
 
 <body class="index-page" data-bs-spy="scroll" data-bs-target="#navmenu" data-bs-offset="100" tabindex="0">
 
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHSRNNDG" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   {% include 'includes/header.html' %}
 
   <main class="main">
-  {% include 'includes/messages.html' %}
+    {% include 'includes/messages.html' %}
 
     {% block content %}{% endblock %}
 
-</main>
+  </main>
 
   {% include 'includes/footer.html' %}
 
@@ -87,6 +103,6 @@
   <!-- Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
 
-   {% block extra_js %}{% endblock %}
+  {% block extra_js %}{% endblock %}
 
 </body>

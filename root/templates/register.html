@@ -17,11 +17,25 @@
 
 
 
-
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PHSRNNDG');</script>
+    <!-- End Google Tag Manager -->
 
 </head>
 
 <body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHSRNNDG" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <div class="my-container">
 
@@ -56,7 +70,7 @@
                     </div>
 
                     <div class="col-12 col-md-6">
-                        <label>  تاريخ الميلاد <span style="color: red;">*</span></label>
+                        <label> تاريخ الميلاد <span style="color: red;">*</span></label>
                         {{ register_form.birthday }}
                         {% for error in register_form.birthday.errors %}
                         <div class="text-danger">{{ error }}</div>
@@ -76,7 +90,7 @@
                     </div>
 
                     <div class="col-12 col-md-6">
-                        <label>  اللقب <span style="color: red;">*</span></label>
+                        <label> اللقب <span style="color: red;">*</span></label>
                         {{ register_form.last_name }}
                         {% for error in register_form.last_name.errors %}
                         <div class="text-danger">{{ error }}</div>
@@ -88,7 +102,7 @@
                 <div class="row g-2">
 
                     <div class="col-12 col-md-6">
-                        <label>   الجنس <span style="color: red;">*</span></label>
+                        <label> الجنس <span style="color: red;">*</span></label>
                         {{ register_form.genre }}
                         {% for error in register_form.genre.errors %}
                         <div class="text-danger">{{ error }}</div>
@@ -125,11 +139,11 @@
                         {{ register_form.attestation_file }}
                     </div>
 
-                 
+
 
                 </div>
 
-             
+
                 <div class="row justify-content-center mt-3">
                     <div class="col-12 col-md-6 captcha-box text-center">
 
@@ -137,7 +151,7 @@
                             أدخل رمز التحقق الظاهر في الصورة
                         </p>
 
-                        <div  class="d-flex flex-column align-items-center mb-2" style="gap:5px;">
+                        <div class="d-flex flex-column align-items-center mb-2" style="gap:5px;">
                             {{ captcha_form.captcha }}
                         </div>
 
