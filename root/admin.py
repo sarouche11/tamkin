@@ -58,6 +58,7 @@ class RegisteredImportExport(ImportExportModelAdmin):
         'phone',
         'wilaya',
         'status',
+        'attestation_file',
         'miclat',
         'active',
     ]
