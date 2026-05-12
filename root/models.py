@@ -5,6 +5,17 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+
+
+class SettingApp(models.Model):
+    home_page = models.BooleanField(default=False)  
+    registration = models.BooleanField(default=True)  
+    email_notif = models.BooleanField(default=False)
+    update_in = models.DateTimeField(auto_now=True)
+    
+    
+
+
 def generate_code():
     return ''.join(random.choices('AZERTYUIOPQSDFGHJKLMWXCVBN123456789', k=10))
 

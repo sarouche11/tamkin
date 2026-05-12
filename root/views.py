@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.http import JsonResponse
-from .models import Commune,Compagnion,Registered, Contact
+from .models import Commune,Compagnion,Registered, Contact, SettingApp
 from .forms import CaptchaForm, RegisteredForm, ContactForm
 from . import data as data_register
 from django.contrib import messages
@@ -11,6 +11,13 @@ from django.core.mail import send_mail
 # Create your views here.
 
 def index(request):
+
+    try:
+        # Check if Home page show is enabled
+        if not SettingApp.objects.filter(home_page=True).exists():
+            return redirect('comming_soon') 
+    except:
+        return redirect('comming_soon') 
 
     contactForm = ContactForm(request.POST or None)
     success_message = request.session.pop('success_message', '')
@@ -63,6 +70,13 @@ def index(request):
 
 
 def register(request):
+    try:
+        # Check if Home page show is enabled
+        if not SettingApp.objects.filter(registration=True).exists():
+            return redirect('comming_soon') 
+    except:
+        return redirect('comming_soon') 
+
 
     if request.method == "POST":
         register_form = RegisteredForm(request.POST)
@@ -94,6 +108,14 @@ def register(request):
 
 
 def register_id(request,code):
+
+    try:
+        # Check if Home page show is enabled
+        if not SettingApp.objects.filter(home_page=True).exists():
+            return redirect('comming_soon') 
+    except:
+        return redirect('comming_soon') 
+
      
     compagnon = Compagnion.objects.filter(code=code).first()
 
@@ -188,3 +210,11 @@ def success(request, code):
     }
 
     return render(request, 'success.html',context )
+
+
+
+def comming_soon(request):
+
+    context = { 
+    }
+    return render(request,'comming_soon.html', context)

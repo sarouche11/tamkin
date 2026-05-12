@@ -3,6 +3,23 @@ from import_export.admin import ImportExportModelAdmin
 from .models import *
 
 
+
+@admin.register(SettingApp)
+class SettingAppImportExport(ImportExportModelAdmin):
+    fields = [
+        'home_page',
+        'registration',
+       
+    ]
+    list_display = [
+        'home_page',
+        'registration',
+       
+    ]
+    search_fields = ['registration']  # Search functionality
+    list_filter = ['registration']  # Filtering options
+    ordering = ['registration']  # Ordering by 'registration'
+
 # Register your models here.
 
 @admin.register(Wilaya)

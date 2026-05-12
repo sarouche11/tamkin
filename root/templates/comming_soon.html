@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Temkeen | Comming Soon</title>
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="{% static 'assets/img/logo2.png' %}">
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="{% static 'assets/comming_soon/vendor/bootstrap/css/bootstrap.min.css' %}">
+
+	<!-- Font Awesome (CORRIGÉ) -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Animations -->
+	<link rel="stylesheet" href="{% static 'assets/comming_soon/vendor/animate/animate.css' %}">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="{% static 'assets/comming_soon/css/util.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/comming_soon/css/main.css' %}">
+</head>
+
+<body>
+
+	<div class="coming-wrapper">
+
+		<!-- Floating circles -->
+		<div class="circle circle1"></div>
+		<div class="circle circle2"></div>
+		<div class="circle circle3"></div>
+
+		<div class="coming-content text-center">
+
+
+			<!-- Coming Soon Icon -->
+			<div class="coming-icon">
+				<i class="fa fa-hourglass-half"></i>
+			</div>
+
+			<!-- Logo -->
+			<img src="{% static 'assets/img/logo.png' %}" alt="Logo" class="logo img-fluid">
+
+			<!-- Title -->
+			<div class="title-box">
+
+				<img src="{% static 'assets/img/mkesm.png' %}" alt="Icon" class="title-image">
+
+				<h1 class="ar-font">
+					وزارة اقتصاد المعرفة والمؤسسات الناشئة والمؤسسات المصغرة
+				</h1>
+
+			</div>
+			<!-- Coming soon -->
+			<p class="coming-text ar-font mt-3">
+				<i class="fa fa-clock-o"></i>
+				قريباً ...
+			</p>
+
+
+
+		</div>
+	</div>
+
+</body>
+
+</html>

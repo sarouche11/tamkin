@@ -1,0 +1,216 @@
+/* =========================
+   BASE
+========================= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+/* =========================
+   WRAPPER
+========================= */
+.coming-wrapper {
+    position: relative;
+
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: linear-gradient(
+        135deg,
+        #40a8a1 0%,
+        #3e9dba 10%,
+        #45b08e 100%
+    );
+
+    overflow: hidden;
+}
+
+/* Overlay noir */
+.coming-wrapper::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    z-index: 1;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+/* Pour garder le contenu au-dessus */
+.coming-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================
+   LOGO
+========================= */
+.logo {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+}
+
+/* =========================
+   TEXT
+========================= */
+.ar-font {
+    font-family: 'Cairo', sans-serif;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.coming-text {
+    font-size: 40px;
+    opacity: 0.9;
+}
+
+.coming-icon {
+
+    width: 100px;
+    height: 100px;
+
+    margin: 0 auto 30px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 42px;
+
+    color: #fff;
+
+    background: rgba(255,255,255,0.12);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.2);
+
+    animation: rotateGlass 4s ease-in-out infinite;
+}
+
+/* Animation sablier */
+@keyframes rotateGlass {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================
+   TITLE WITH IMAGE
+========================= */
+
+.title-box {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-top: 25px;
+
+    flex-wrap: wrap;
+}
+
+.title-image {
+
+    width: 65px;
+    height: 65px;
+
+    object-fit: contain;
+
+    animation: floatSmall 3s ease-in-out infinite;
+}
+
+.title-box h1 {
+
+    margin: 0;
+
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.7;
+}
+
+
+/* Petite animation */
+@keyframes floatSmall {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .title-box {
+        flex-direction: column;
+    }
+
+    .title-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .title-box h1 {
+        font-size: 22px;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .coming-text {
+        font-size: 18px;
+    }
+
+    .logo {
+        max-width: 280px;
+    }
+}
